@@ -1,4 +1,12 @@
 /** @type {import('next').NextConfig} */
-const nextConfig = {};
+const nextConfig = {
+    images: {
+        remotePatterns: [
+            {
+                hostname: "pastel-heron-61.convex.cloud",
+            }
+        ]
+    }
+};
 
 export default nextConfig;
