@@ -24,8 +24,8 @@ const defaultErrorState = {
 export default function CreatePage() {
   const generateUploadUrl = useMutation(api.files.generateUploadUrl);
   const createThumbnail = useMutation(api.thumbnails.createThumbnail);
-  const [imageA, setImageA] = useState("");
-  const [imageB, setImageB] = useState("");
+  const [imageA, setImageA] = useState('');
+  const [imageB, setImageB] = useState('');
   const [errors, setErrors] = useState(defaultErrorState);
   const { toast } = useToast();
   const router = useRouter();
@@ -127,6 +127,7 @@ export default function CreatePage() {
               uploadUrl={generateUploadUrl}
               fileTypes={["image/*"]}
               onUploadComplete={async (uploaded: UploadFileResponse[]) => {
+                console.log('Upload Response:', uploaded);
                 setImageA((uploaded[0].response as any).storageId);
               }}
               onUploadError={(error: unknown) => {
@@ -157,6 +158,7 @@ export default function CreatePage() {
                 uploadUrl={generateUploadUrl}
                 fileTypes={["image/*"]}
                 onUploadComplete={async (uploaded: UploadFileResponse[]) => {
+                  console.log('Upload Response:', uploaded);
                   setImageB((uploaded[0].response as any).storageId);
                 }}
                 onUploadError={(error: unknown) => {
