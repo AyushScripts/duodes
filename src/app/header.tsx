@@ -16,10 +16,12 @@ export function Header() {
           <SignedIn>
             <Link href="/create" className="link">Create</Link>
             <Link href="/dashboard" className="link">Dashboard</Link>
+            <Link href="/explore" className="link">Explore</Link>
           </SignedIn>
           <SignedOut>
             <Link href="/about" className="link">About</Link>
             <Link href="/pricing" className="link">Pricing</Link>
+            <Link href="/explore" className="link">Explore</Link>
           </SignedOut>
 
         </div>
